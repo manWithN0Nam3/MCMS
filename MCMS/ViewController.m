@@ -15,11 +15,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 //@property TheMCreatures *theCreature;
 @end
 
 @implementation ViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+
+    [self.tableView reloadData];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -33,13 +39,9 @@
 }
 
 - (IBAction)onAddButton:(id)sender {
+    TheMCreatures *creature = [[TheMCreatures alloc]initWithName:self.textField.text detail:self.textField2.text];
+    [self.creatures addObject:creature];
 
-//    TheMCreatures *theCreatures = [TheMCreatures new];
-//
-//    self.textField.text= theCreatures.name;
-
-    [self.creatures addObject:self.textField.text];
-//    [self.creatureDetails addObject:self.textField2.text];
 
     self.textField.text = @"";
     self.textField2.text = @"";
@@ -81,7 +83,17 @@
     showVC.name = creature.name;
     showVC.detail = creature.detail;
 
+    self.indexPath = indexPath.row;
+
 
 }
 
+
+-(IBAction)unwind:(UIStoryboardSegue *)segue{
+
+
+
+
+    
+}
 @end

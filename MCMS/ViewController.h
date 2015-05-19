@@ -11,7 +11,7 @@
 
 @interface ViewController : UIViewController
 @property NSMutableArray *creatures;
-@property NSMutableArray *creatureDetails;
+@property NSInteger indexPath;
 
 @end
 

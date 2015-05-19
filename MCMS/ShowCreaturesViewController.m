@@ -8,8 +8,9 @@
 
 #import "ShowCreaturesViewController.h"
 #import "ViewController.h"
+#import "TheMCreatures.h"
 
-@interface ShowCreaturesViewController ()
+@interface ShowCreaturesViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
@@ -22,8 +23,17 @@
 
 @implementation ShowCreaturesViewController
 
+
+-(void)viewDidDisappear:(BOOL)animated{
+
+
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
     self.titleTextLabel.text = self.name;
     self.titleTextField.text = self.name;
 
@@ -44,12 +54,25 @@
         [self.titleTextField endEditing:YES];
         [self.detailTextField endEditing:YES];
 
+        
+
+        self.titleTextLabel.text = self.titleTextField.text;
+//
+//        ViewController *vc = [ViewController new];
+//        [vc.creatures replaceObjectAtIndex:<#(NSUInteger)#> withObject:self.]
+
+//        ViewController* vc = [ViewController new];
+//        TheMCreatures *creature = [[TheMCreatures alloc]initWithName:self.titleTextField.text detail:self.detailTextField.text];
+//        [vc.creatures insertObject:creature atIndex:<#(NSUInteger)#>:creature];
+
+
 
     } else {
         self.editing = true;
         sender.style = UIBarButtonItemStyleDone;
         sender.title =@"Done";
-
+      
+        
 
 
 
