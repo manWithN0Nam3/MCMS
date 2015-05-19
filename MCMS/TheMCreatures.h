@@ -11,10 +11,10 @@
 @interface TheMCreatures : NSObject
 
 @property NSString* name;
+@property NSString *detail;
 
 
-
--(instancetype)initWithCreatureOne:(NSString *)one andCreatureTwo:(NSString*)two andCreatureThree:(NSString *)three;
+-(instancetype)initWithName:(NSString *)nameParemeter detail:(NSString*)detailParemeter;
 
 
 @end

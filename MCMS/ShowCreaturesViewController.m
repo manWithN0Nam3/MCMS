@@ -7,10 +7,16 @@
 //
 
 #import "ShowCreaturesViewController.h"
+#import "ViewController.h"
 
 @interface ShowCreaturesViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *editCreatureTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UITextField *detailTextField;
+
+
 
 @end
 
@@ -18,47 +24,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleTextLabel.text = self.name;
+    self.titleTextField.text = self.name;
 
-    self.editing = FALSE;
+    self.detailTextField.text = self.detail;
+    self.detailLabel.text = self.detail;
+
+    self.editing = false;
 
 }
+- (IBAction)barButtonItem:(UIBarButtonItem *)sender {
 
-- (IBAction)onEditButtonTapped:(UIButton *)sender {
+    if (self.editing) {
 
 
-    if (self.editing == true) {
-        sender.title = @"Edit";
         self.editing = false;
-    }
-    else {
-        sender.title = @"Done"
+        sender.style = UIBarButtonItemStylePlain;
+        sender.title =@"Edit";
+        [self.titleTextField endEditing:YES];
+        [self.detailTextField endEditing:YES];
+
+
+    } else {
         self.editing = true;
+        sender.style = UIBarButtonItemStyleDone;
+        sender.title =@"Done";
+
+
+
+
     }
 
+
+
+
 }
 
-//    if ([sender.title isEqual:@"Edit"]) {
-//        sender.title = @"Done";
-//    }
-//    else if ([sender.title isEqual:@"Done"]) {
-//        sender.title = @"Edit";
-//    }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

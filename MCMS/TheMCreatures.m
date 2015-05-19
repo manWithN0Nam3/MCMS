@@ -10,15 +10,15 @@
 
 @implementation TheMCreatures
 
--(instancetype)initWithCreatureOne:(NSString *)one andCreatureTwo:(NSString*)two andCreatureThree:(NSString *)three{
+-(instancetype)initWithName:(NSString *)nameParemeter detail:(NSString*)detailParemeter;
 
+{
     self = [super init];
 
     if (self) {
-        self.name = one;
-//        self.name2 = two;
-//        self.name3 = three;
-//
+        self.name =nameParemeter;
+        
+        self.detail = detailParemeter;
     }
 
     return self;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AgN-46-6sR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AgN-46-6sR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O6V-ba-nsh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="137" width="320" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="rkE-Ra-MBu" detailTextLabel="uux-T6-iFY" style="IBUITableViewCellStyleSubtitle" id="mz2-cj-HId">
@@ -56,7 +56,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QQ-B7-jX5">
-                                <rect key="frame" x="249" y="82" width="30" height="30"/>
+                                <rect key="frame" x="244" y="108" width="30" height="30"/>
                                 <state key="normal" title="add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,12 +64,17 @@
                                     <action selector="onAddButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CHC-We-s9Z"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P04-e2-pnm">
+                                <rect key="frame" x="8" y="137" width="206" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="O6V-ba-nsh" secondAttribute="trailing" constant="-16" id="YDj-zB-qnX"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O6V-ba-nsh" secondAttribute="bottom" id="alV-A2-NH6"/>
-                            <constraint firstItem="O6V-ba-nsh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="64" id="gLa-uv-8Nt"/>
+                            <constraint firstItem="O6V-ba-nsh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="137" id="gLa-uv-8Nt"/>
                             <constraint firstItem="O6V-ba-nsh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rJu-uJ-Tk5"/>
                         </constraints>
                     </view>
@@ -77,6 +82,7 @@
                     <connections>
                         <outlet property="tableView" destination="O6V-ba-nsh" id="c6L-cM-udx"/>
                         <outlet property="textField" destination="kUj-Qm-1lj" id="Hm4-VH-amG"/>
+                        <outlet property="textField2" destination="P04-e2-pnm" id="24K-xS-xCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -95,26 +101,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-NJ-sDU">
-                                <rect key="frame" x="274" y="78" width="30" height="30"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onEditButtonTapped:" destination="XSF-U2-7tz" eventType="touchUpInside" id="ua1-hj-hDK"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBF-6D-T5m">
-                                <rect key="frame" x="16" y="78" width="250" height="30"/>
+                                <rect key="frame" x="16" y="84" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-tY-6Sw">
+                                <rect key="frame" x="129" y="130" width="101" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rim-q9-yIq">
+                                <rect key="frame" x="64" y="398" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hL-kz-18g">
+                                <rect key="frame" x="105" y="333" width="110" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F6T-Rs-GHa"/>
+                    <navigationItem key="navigationItem" id="F6T-Rs-GHa">
+                        <barButtonItem key="rightBarButtonItem" title="edit" id="Gsb-X0-7FB">
+                            <connections>
+                                <action selector="barButtonItem:" destination="XSF-U2-7tz" id="sC7-UA-mVq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="editCreatureTextField" destination="ZBF-6D-T5m" id="86I-Ok-aO9"/>
+                        <outlet property="detailLabel" destination="1hL-kz-18g" id="SfE-EJ-7IH"/>
+                        <outlet property="detailTextField" destination="Rim-q9-yIq" id="TeG-5L-JU8"/>
+                        <outlet property="titleTextField" destination="ZBF-6D-T5m" id="sny-aM-71c"/>
+                        <outlet property="titleTextLabel" destination="TAL-tY-6Sw" id="9dV-Xn-pTu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdV-pb-wfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

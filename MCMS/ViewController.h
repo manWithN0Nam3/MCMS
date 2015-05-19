@@ -10,7 +10,8 @@
 #import "TheMCreatures.h"
 
 @interface ViewController : UIViewController
-
+@property NSMutableArray *creatures;
+@property NSMutableArray *creatureDetails;
 
 @end
 
