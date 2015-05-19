@@ -11,8 +11,8 @@
 @interface TheMCreatures : NSObject
 
 @property NSString* name;
-//@property NSString* name2;
-//@property NSString *name3;
+
+
 
 -(instancetype)initWithCreatureOne:(NSString *)one andCreatureTwo:(NSString*)two andCreatureThree:(NSString *)three;
 

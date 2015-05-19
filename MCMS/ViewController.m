@@ -7,26 +7,28 @@
 //
 
 #import "ViewController.h"
+#import "ShowCreaturesViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *creatures;
+//@property TheMCreatures *theCreature;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-    TheMCreatures *alex = [[TheMCreatures alloc]init];
-    TheMCreatures *tim = [[TheMCreatures alloc]init];
-    TheMCreatures *paul = [[TheMCreatures alloc]init];
-
-    alex.name = @"alexTheLion";
-    tim.name = @"TimThe Lion";
-    paul.name =@"paul the lion";
+//
+//
+//    TheMCreatures *alex = [[TheMCreatures alloc]init];
+//    TheMCreatures *tim = [[TheMCreatures alloc]init];
+//    TheMCreatures *paul = [[TheMCreatures alloc]init];
+//
+//    alex.name = @"alexTheLion";
+//    tim.name = @"TimThe Lion";
+//    paul.name =@"paul the lion";
 
     
 //    self.creatures = [NSMutableArray arrayWithObjects:alex,tim,paul, nil];
@@ -38,6 +40,10 @@
 }
 
 - (IBAction)onAddButton:(id)sender {
+
+//    TheMCreatures *theCreatures = [TheMCreatures new];
+//
+//    self.textField.text= theCreatures.name;
 
     [self.creatures addObject:self.textField.text];
 
@@ -64,6 +70,18 @@
 
 
     return self.creatures.count;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    ShowCreaturesViewController *showVC = segue.destinationViewController;
+
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    showVC.title = [self.creatures objectAtIndex:indexPath.row];
+
+
+
 }
 
 @end

@@ -11,6 +11,6 @@
 @interface ShowCreaturesViewController : UIViewController
 
 @property NSString *name;
-@property NSString* description;
+@property NSString *details;
 
 @end

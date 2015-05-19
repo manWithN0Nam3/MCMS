@@ -21,11 +21,28 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mz2-cj-HId">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="rkE-Ra-MBu" detailTextLabel="uux-T6-iFY" style="IBUITableViewCellStyleSubtitle" id="mz2-cj-HId">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mz2-cj-HId" id="hks-25-ndc">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rkE-Ra-MBu">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uux-T6-iFY">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XSF-U2-7tz" kind="push" identifier="ShowCreatureSegue" id="665-da-vdG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -65,6 +82,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="355"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="01N-Q6-Fwd">
+            <objects>
+                <viewController id="XSF-U2-7tz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kg0-Ph-ePd"/>
+                        <viewControllerLayoutGuide type="bottom" id="N3d-Wx-N2a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Id-vc-ROs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sft-n5-jmc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sft-n5-jmc" secondAttribute="trailing" constant="-16" id="70R-Dj-26d"/>
+                            <constraint firstItem="sft-n5-jmc" firstAttribute="leading" secondItem="9Id-vc-ROs" secondAttribute="leadingMargin" constant="-16" id="Ovs-LR-QPI"/>
+                            <constraint firstItem="N3d-Wx-N2a" firstAttribute="top" secondItem="sft-n5-jmc" secondAttribute="bottom" id="QK4-fv-bW6"/>
+                            <constraint firstItem="sft-n5-jmc" firstAttribute="top" secondItem="Kg0-Ph-ePd" secondAttribute="bottom" id="n1h-aW-MgO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F6T-Rs-GHa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdV-pb-wfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bBZ-Rv-fOK">
