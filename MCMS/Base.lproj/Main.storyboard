@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O6V-ba-nsh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mz2-cj-HId">
@@ -33,16 +33,34 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="VsN-8F-DSa"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUj-Qm-1lj">
+                                <rect key="frame" x="8" y="82" width="206" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QQ-B7-jX5">
+                                <rect key="frame" x="249" y="82" width="30" height="30"/>
+                                <state key="normal" title="add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CHC-We-s9Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="O6V-ba-nsh" secondAttribute="trailing" constant="-16" id="YDj-zB-qnX"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O6V-ba-nsh" secondAttribute="bottom" id="alV-A2-NH6"/>
-                            <constraint firstItem="O6V-ba-nsh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="gLa-uv-8Nt"/>
+                            <constraint firstItem="O6V-ba-nsh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="64" id="gLa-uv-8Nt"/>
                             <constraint firstItem="O6V-ba-nsh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rJu-uJ-Tk5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z2v-G0-QDA"/>
+                    <connections>
+                        <outlet property="tableView" destination="O6V-ba-nsh" id="c6L-cM-udx"/>
+                        <outlet property="textField" destination="kUj-Qm-1lj" id="Hm4-VH-amG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

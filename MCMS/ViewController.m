@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *creatures;
 @end
 
@@ -27,21 +29,33 @@
     paul.name =@"paul the lion";
 
     
-    self.creatures = [NSMutableArray arrayWithObjects:alex,tim,paul, nil];
-
+//    self.creatures = [NSMutableArray arrayWithObjects:alex,tim,paul, nil];
+    self.creatures = [NSMutableArray new];
 
 
 
 
 }
 
+- (IBAction)onAddButton:(id)sender {
+
+    [self.creatures addObject:self.textField.text];
+
+    self.textField.text = @"";
+
+    [self.textField endEditing:YES];
+
+    [self.tableView reloadData];
+
+
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-   TheMCreatures *mCreature = [self.creatures objectAtIndex:indexPath.row];
+//   TheMCreatures *mCreature = [self.creatures objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = mCreature.name;
+    cell.textLabel.text =[self.creatures objectAtIndex:indexPath.row];
     return cell;
 
 }
