@@ -10,6 +10,8 @@
 
 @interface ShowCreaturesViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *editCreatureTextField;
+
 @end
 
 @implementation ShowCreaturesViewController
@@ -17,8 +19,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.editing = FALSE;
 
 }
+
+- (IBAction)onEditButtonTapped:(UIButton *)sender {
+
+
+    if (self.editing == true) {
+        sender.title = @"Edit";
+        self.editing = false;
+    }
+    else {
+        sender.title = @"Done"
+        self.editing = true;
+    }
+
+}
+
+//    if ([sender.title isEqual:@"Edit"]) {
+//        sender.title = @"Done";
+//    }
+//    else if ([sender.title isEqual:@"Done"]) {
+//        sender.title = @"Edit";
+//    }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

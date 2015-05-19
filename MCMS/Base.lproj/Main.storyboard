@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AgN-46-6sR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AgN-46-6sR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="766" y="355"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Creatures View Controller-->
         <scene sceneID="01N-Q6-Fwd">
             <objects>
-                <viewController id="XSF-U2-7tz" sceneMemberID="viewController">
+                <viewController id="XSF-U2-7tz" customClass="ShowCreaturesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kg0-Ph-ePd"/>
                         <viewControllerLayoutGuide type="bottom" id="N3d-Wx-N2a"/>
@@ -95,22 +95,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sft-n5-jmc">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-NJ-sDU">
+                                <rect key="frame" x="274" y="78" width="30" height="30"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onEditButtonTapped:" destination="XSF-U2-7tz" eventType="touchUpInside" id="ua1-hj-hDK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBF-6D-T5m">
+                                <rect key="frame" x="16" y="78" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sft-n5-jmc" secondAttribute="trailing" constant="-16" id="70R-Dj-26d"/>
-                            <constraint firstItem="sft-n5-jmc" firstAttribute="leading" secondItem="9Id-vc-ROs" secondAttribute="leadingMargin" constant="-16" id="Ovs-LR-QPI"/>
-                            <constraint firstItem="N3d-Wx-N2a" firstAttribute="top" secondItem="sft-n5-jmc" secondAttribute="bottom" id="QK4-fv-bW6"/>
-                            <constraint firstItem="sft-n5-jmc" firstAttribute="top" secondItem="Kg0-Ph-ePd" secondAttribute="bottom" id="n1h-aW-MgO"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F6T-Rs-GHa"/>
+                    <connections>
+                        <outlet property="editCreatureTextField" destination="ZBF-6D-T5m" id="86I-Ok-aO9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdV-pb-wfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
