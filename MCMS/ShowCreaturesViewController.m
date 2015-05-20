@@ -8,14 +8,16 @@
 
 #import "ShowCreaturesViewController.h"
 #import "ViewController.h"
-#import "TheMCreatures.h"
+#import "TheMCreature.h"
 
-@interface ShowCreaturesViewController ()<UITextFieldDelegate>
+@interface ShowCreaturesViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 
@@ -33,7 +35,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+//    self.accesories = [NSMutableArray new];
+
+    [self.titleTextField setHidden:YES];
+    [self.detailTextField setHidden:YES];
+
+    self.imageView.image = self.image;
     self.titleTextLabel.text = self.name;
     self.titleTextField.text = self.name;
 
@@ -45,18 +52,18 @@
 }
 - (IBAction)barButtonItem:(UIBarButtonItem *)sender {
 
-    if (self.editing) {
+    if ([sender.title isEqualToString:@"edit"]) {
 
-
-        self.editing = false;
-        sender.style = UIBarButtonItemStylePlain;
-        sender.title =@"Edit";
-        [self.titleTextField endEditing:YES];
-        [self.detailTextField endEditing:YES];
+        sender.style = UIBarButtonItemStyleDone;
+        sender.title =@"Done";
 
         
+        [self.titleTextField setHidden:NO];
+        [self.detailTextField setHidden:NO];
 
-        self.titleTextLabel.text = self.titleTextField.text;
+        [self.titleTextLabel setHidden:YES];
+        [self.detailLabel setHidden:YES];
+
 //
 //        ViewController *vc = [ViewController new];
 //        [vc.creatures replaceObjectAtIndex:<#(NSUInteger)#> withObject:self.]
@@ -67,14 +74,31 @@
 
 
 
-    } else {
-        self.editing = true;
-        sender.style = UIBarButtonItemStyleDone;
-        sender.title =@"Done";
-      
-        
+    } else if([sender.title isEqualToString:@"Done"]){
 
 
+
+        sender.style = UIBarButtonItemStylePlain;
+        sender.title =@"edit";
+        [self.detailTextField setHidden:YES];
+        [self.titleTextField setHidden:YES];
+
+
+        [self.titleTextLabel setHidden:NO];
+        [self.detailLabel  setHidden:NO];
+
+
+
+        self.titleTextLabel.text = self.titleTextField.text;
+
+        self.name =self.titleTextField.text;
+
+        self.title = self.name;
+        self.detailLabel.text = self.detailTextField.text;
+
+
+        [self.titleTextField resignFirstResponder];
+        [self.detailTextField resignFirstResponder];
 
     }
 
@@ -83,6 +107,18 @@
 
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.accesories.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell2"];
+    cell.textLabel.text = [self.accesories objectAtIndex:indexPath.row];
+
+    return cell;
+}
 
 
 

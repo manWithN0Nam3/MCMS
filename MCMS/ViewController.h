@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TheMCreatures.h"
+#import "TheMCreature.h"
 
 @interface ViewController : UIViewController
 @property NSMutableArray *creatures;

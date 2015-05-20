@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ShowCreaturesViewController.h"
-#import "TheMCreatures.h"
+#import "TheMCreature.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -30,18 +30,19 @@
     [super viewDidLoad];
 
 
-    TheMCreatures *m1 = [[TheMCreatures alloc]initWithName:@"alex" detail:@"hello"];
+    TheMCreature *m1 = [[TheMCreature alloc]initWithName:@"alex" detail:@"hello"image:[UIImage imageNamed:@"Green-Grass.jpg"]accessories:[NSMutableArray arrayWithObjects:@"sings",@"hwhat", @"who", nil]];
+    TheMCreature *m2 = [[TheMCreature alloc]initWithName:@"tim" detail:@"bye" image:[UIImage imageNamed:@"paul"]accessories:[NSMutableArray arrayWithObjects:@"sings",@"alex",@"random strings of useless words", nil]];
 
-    self.creatures = [[NSMutableArray alloc]initWithObjects:m1, nil];
+    self.creatures = [[NSMutableArray alloc]initWithObjects:m1,m2, nil];
 //    self.creatureDetails = [NSMutableArray new];
     
 
 }
 
 - (IBAction)onAddButton:(id)sender {
-    TheMCreatures *creature = [[TheMCreatures alloc]initWithName:self.textField.text detail:self.textField2.text];
-    [self.creatures addObject:creature];
+    TheMCreature *ccc = [[TheMCreature alloc]initWithName:self.textField.text detail:self.textField2.text image:[UIImage imageNamed:nil]accessories:nil];
 
+    [self.creatures addObject:ccc];
 
     self.textField.text = @"";
     self.textField2.text = @"";
@@ -58,11 +59,14 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-//   TheMCreatures *mCreature = [self.creatures objectAtIndex:indexPath.row];
-    TheMCreatures *creature =[self.creatures objectAtIndex:indexPath.row];
+    TheMCreature *creature =[self.creatures objectAtIndex:indexPath.row];
 
+    //why does this happen
+//    creature.name = @"what";
     cell.textLabel.text = creature.name;
+    NSLog(@"%@",creature.name);
     cell.detailTextLabel.text = creature.detail;
+
     return cell;
 
 }
@@ -78,12 +82,18 @@
     ShowCreaturesViewController *showVC = segue.destinationViewController;
 
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    TheMCreatures *creature = [self.creatures objectAtIndex:indexPath.row];
-    
+
+    TheMCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+
+
+
     showVC.name = creature.name;
     showVC.detail = creature.detail;
+    showVC.image = creature.image;
+    showVC.accesories = creature.accessories;
+    
 
-    self.indexPath = indexPath.row;
+//    self.indexPath = indexPath.row;
 
 
 }

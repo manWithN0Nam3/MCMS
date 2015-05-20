@@ -14,7 +14,7 @@
 		973776DC1B0BB37F00C03081 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973776DB1B0BB37F00C03081 /* Images.xcassets */; };
 		973776DF1B0BB37F00C03081 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 973776DD1B0BB37F00C03081 /* LaunchScreen.xib */; };
 		973776EB1B0BB37F00C03081 /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 973776EA1B0BB37F00C03081 /* MCMSTests.m */; };
-		973776F61B0BB48D00C03081 /* TheMCreatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 973776F51B0BB48D00C03081 /* TheMCreatures.m */; };
+		973776F61B0BB48D00C03081 /* TheMCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 973776F51B0BB48D00C03081 /* TheMCreature.m */; };
 		973776F91B0BBDE000C03081 /* ShowCreaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973776F81B0BBDE000C03081 /* ShowCreaturesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		973776E41B0BB37F00C03081 /* MCMSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCMSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		973776E91B0BB37F00C03081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		973776EA1B0BB37F00C03081 /* MCMSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMSTests.m; sourceTree = "<group>"; };
-		973776F41B0BB48D00C03081 /* TheMCreatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMCreatures.h; sourceTree = "<group>"; };
-		973776F51B0BB48D00C03081 /* TheMCreatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMCreatures.m; sourceTree = "<group>"; };
+		973776F41B0BB48D00C03081 /* TheMCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMCreature.h; sourceTree = "<group>"; };
+		973776F51B0BB48D00C03081 /* TheMCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMCreature.m; sourceTree = "<group>"; };
 		973776F71B0BBDE000C03081 /* ShowCreaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCreaturesViewController.h; sourceTree = "<group>"; };
 		973776F81B0BBDE000C03081 /* ShowCreaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCreaturesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +93,8 @@
 				973776D61B0BB37F00C03081 /* ViewController.m */,
 				973776F71B0BBDE000C03081 /* ShowCreaturesViewController.h */,
 				973776F81B0BBDE000C03081 /* ShowCreaturesViewController.m */,
-				973776F41B0BB48D00C03081 /* TheMCreatures.h */,
-				973776F51B0BB48D00C03081 /* TheMCreatures.m */,
+				973776F41B0BB48D00C03081 /* TheMCreature.h */,
+				973776F51B0BB48D00C03081 /* TheMCreature.m */,
 				973776D81B0BB37F00C03081 /* Main.storyboard */,
 				973776DB1B0BB37F00C03081 /* Images.xcassets */,
 				973776DD1B0BB37F00C03081 /* LaunchScreen.xib */,
@@ -230,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				973776F91B0BBDE000C03081 /* ShowCreaturesViewController.m in Sources */,
-				973776F61B0BB48D00C03081 /* TheMCreatures.m in Sources */,
+				973776F61B0BB48D00C03081 /* TheMCreature.m in Sources */,
 				973776D71B0BB37F00C03081 /* ViewController.m in Sources */,
 				973776D41B0BB37F00C03081 /* AppDelegate.m in Sources */,
 				973776D11B0BB37F00C03081 /* main.m in Sources */,
@@ -428,6 +428,7 @@
 				973776F01B0BB37F00C03081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		973776F11B0BB37F00C03081 /* Build configuration list for PBXNativeTarget "MCMSTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +437,7 @@
 				973776F31B0BB37F00C03081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
